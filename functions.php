@@ -80,4 +80,47 @@ if (!function_exists('vbt_widgets_init')):
 
 	}
 endif;
+
+if (!function_exists('vbt_remove_headlinks')):
+	/**
+	 * Removes some links from the header 
+	 */
+	function vbt_remove_headlinks() {
+		remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'index_rel_link');
+		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+		remove_action('wp_head', 'start_post_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+	}
+endif;
+add_action('init', 'vbt_remove_headlinks');
+
+/**
+ * Removing the WP version
+ */
+add_filter('the_generator', '__return_false');
+
+/**
+ * Remove admin bar
+ */
+add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Make menus compatibles with Bootstrap
+ */
+if (!function_exists('vbt_change_menu_class')):
+	function vbt_change_menu_class($menu)
+	{  
+		$menu = preg_replace('/class="menu"/','class="menu nav navbar-nav"', $menu);
+		$menu = preg_replace('/class="sub-menu"/','class="sub-menu dropdown-menu"', $menu);
+		$menu = preg_replace('/(menu-item-has-children)/','$1 dropdown', $menu);
+		$menu = preg_replace('/<a(.*)href="#">(.*)<\/a>/','<a$1href="#" class="dropdown-toggle" data-toggle="dropdown">$2 <b class="caret"></b></a>', $menu);
+
+	    return $menu;  
+	}
+endif;
+add_filter('wp_nav_menu','vbt_change_menu_class');
+
+require_once('inc/scripts.php');
 ?>
