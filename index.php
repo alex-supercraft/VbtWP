@@ -1,1 +1,8 @@
-<?php echo __('Hola Mundo!'); ?>
+<?php
+/**
+ * The main template file
+ *
+ * @package vbt
+ */
+echo __('Hola Mundo!');
+?>
