@@ -1,3 +1,8 @@
+<?php if (! is_home()): ?>
+	<div class="page-header">
+		<h1><?php echo vbt_get_loop_title(); ?></h1>
+	</div>
+<?php endif; ?>
 <!-- Posts loop -->
 <?php while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

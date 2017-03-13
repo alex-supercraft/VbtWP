@@ -125,6 +125,27 @@ add_filter('the_generator', '__return_false');
 add_filter('show_admin_bar', '__return_false');
 
 /**
+ * Get some information for loop.php
+ */
+if (!function_exists('vbt_get_loop_title')) :
+	function vbt_get_loop_title()
+	{
+		$curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+	
+		if (is_category()) : $title = __( 'Categoria' , 'vbt' ) . ' : ' . single_cat_title( '', false );
+		elseif (is_tag()) : $title = __( 'Etiqueta' , 'vbt' ) . ' : ' . single_tag_title( '', false);
+		elseif (is_month()) : $title = __( 'Archivos Mensuales' , 'vbt' ) . ' : ' . get_the_date('F Y');
+		elseif (is_year()) : $title = __( 'Archivos Anuales' , 'vbt' ). ' : ' . get_the_date('Y');
+		elseif (is_search()) : $title = __( 'Buscar resultados de' , 'vbt' ) . ' : ' . get_search_query();
+		elseif (is_author()) : $title = __( 'Autor de Archivos', 'vbt' ) . ' : ' . $curauth->display_name;
+		elseif (is_archive()) : $title = __( 'Archivo' , 'vbt' );
+		endif;
+		
+		return $title;
+	}
+endif;
+
+/**
  * Make menus compatibles with .navbar from Bootstrap
  * Hace los menus compatibles con .navbar de bootstrap
  */
