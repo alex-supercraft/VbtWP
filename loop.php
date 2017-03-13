@@ -2,7 +2,24 @@
 	<div class="page-header">
 		<h1><?php echo vbt_get_loop_title(); ?></h1>
 	</div>
+
+	<?php if (is_author()): ?>
+		<?php if ( get_the_author_meta( 'description' ) ) : ?>
+			<section id="vbt-author-info">
+				<figure>
+					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'vbt_author_bio_avatar_size', 60 ) ); ?>
+				</figure>
+
+				<h2>
+					<?php printf( __( 'Acerca de %s', 'vbt' ), get_the_author() ); ?>
+				</h2>
+
+				<p class="description"><?php the_author_meta( 'description' ); ?></p>
+			</section>
+		<?php endif ?>
+	<?php endif ?>
 <?php endif; ?>
+
 <!-- Posts loop -->
 <?php while ( have_posts() ) : the_post(); ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
