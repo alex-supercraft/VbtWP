@@ -1,4 +1,34 @@
 <?php
+if (!function_exists('vbt_comments')) :
+	/**
+	 * Modificar los campos Autor, Email y Sitio web del formulario de comentarios
+	 */
+	function vbt_modify_comment_fields( $fields )
+	{
+		//Variables necesarias para que esto funcione
+		$commenter = wp_get_current_commenter();
+		$req = get_option( 'require_name_email' );
+		$aria_req = ( $req ? " aria-required='true'" : '' );
+	 
+		$fields =  array(
+	 
+			'author' =>
+				'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+					'" size="30"' . $aria_req . ' placeholder="' . __('Tu nombre', 'vbt') . '" />', //Editamos el campo autor
+
+			'email' =>
+				'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+					'" size="30"' . $aria_req . ' placeholder="' . __('Tu email', 'vbt') . '" />', //Editamos el campo email
+
+			'url' =>
+				'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+				'" size="30" placeholder="' . __('Tu sitio web', 'vbt') . '"  />', //Editamos el campo sitio web
+			); 
+		
+		return $fields;
+	}
+	add_filter('comment_form_default_fields', 'vbt_modify_comment_fields');
+endif;
 if (!function_exists('vbt_comments')) : 
 	function vbt_comments($comment, $args, $depth)
 	{

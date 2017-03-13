@@ -82,6 +82,13 @@ body h1.text-hide {
   padding-right: 20px;
   border-top: 1px solid #e7e7e7;
 }
+#vbt-main #vbt-content #vbt-comments {
+  margin-top: 20px;
+}
+#vbt-main #vbt-content #vbt-comments .comment-form-wrapp {
+  padding: 20px;
+  border-top: 1px solid #e7e7e7;
+}
 /* ----------------------------------------- */
 /* Footer Style */
 /* ----------------------------------------- */
