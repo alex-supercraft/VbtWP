@@ -1,3 +1,12 @@
+<?php
+/**
+ * The Main Sidebar
+ * El sidebar principla
+ *
+ * @package vbt
+ */
+?>
+
 <!-- #vbt-sidebar -->
 <section id="vbt-sidebar" class="col-md-4">
 	<?php if ( ! dynamic_sidebar( 'main-sidebar' ) ) : ?>

@@ -1,3 +1,12 @@
+<?php
+/**
+ * The 404 template file
+ * Plantilla para errores 404
+ *
+ * @package vbt
+ */
+?>
+
 <?php get_header(); ?>
 
 	<!-- #vbt-main -->

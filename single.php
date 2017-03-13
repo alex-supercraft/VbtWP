@@ -1,3 +1,12 @@
+<?php
+/**
+ * The single post template
+ * plantilla para los posts individuales
+ *
+ * @package vbt
+ */
+?>
+
 <?php get_header(); ?>
 
 	<!-- #vbt-main -->

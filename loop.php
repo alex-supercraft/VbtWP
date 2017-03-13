@@ -1,3 +1,12 @@
+<?php
+/**
+ * The loop
+ * El loop
+ *
+ * @package vbt
+ */
+?>
+
 <?php if (! is_home()): ?>
 	<div class="page-header">
 		<h1><?php echo vbt_get_loop_title(); ?></h1>

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Search form
+ * Formulario de búsqueda
+ *
+ * @package vbt
+ */
+
 if (!function_exists('vbt_search_form')) :
 	/**
 	 * Search form filter

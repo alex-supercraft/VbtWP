@@ -1,3 +1,12 @@
+<?php
+/**
+ * The comments template file
+ * Plantilla para comentarios
+ *
+ * @package vbt
+ */
+?>
+
 <section id="vbt-comments" class="panel panel-default">
 	<?php /* Important, do not delete | Importante, No borrar */ ?>
 	<?php if ( post_password_required() ) : ?>

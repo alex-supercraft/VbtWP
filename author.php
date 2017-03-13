@@ -1,3 +1,11 @@
+<?php
+/**
+ * The author template file
+ * Plantilla para autores
+ *
+ * @package vbt
+ */
+?>
 <?php get_header(); ?>
 
 	<!-- #vbt-main -->

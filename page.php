@@ -1,3 +1,12 @@
+<?php
+/**
+ * The page template file
+ * Plantilla para páginas
+ *
+ * @package vbt
+ */
+?>
+
 <?php get_header(); ?>
 
 	<!-- #vbt-main -->

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Comments
+ * Comentarios
+ *
+ * @package vbt
+ */
+
 if (!function_exists('vbt_comments')) :
 	/**
 	 * Modificar los campos Autor, Email y Sitio web del formulario de comentarios

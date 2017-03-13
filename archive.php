@@ -1,3 +1,11 @@
+<?php
+/**
+ * The archive template file
+ * Plantilla para archivos
+ *
+ * @package vbt
+ */
+?>
 <?php get_header(); ?>
 
 	<!-- #vbt-main -->

@@ -1,4 +1,11 @@
 <?php
+/**
+ * Scripts and Styles
+ * Scripts y estilos
+ *
+ * @package vbt
+ */
+
 if ( ! function_exists( 'vbt_scripts' ) ):
 	/**
 	 * Scripts
