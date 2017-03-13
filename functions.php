@@ -1,28 +1,38 @@
 <?php
 /**
  * Vbt Functions
+ * Funciones y utilidades
  *
  * @package vbt
  */
 if (! function_exists('vbt_setup')):
 	/** 
-	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' hook runs.
+	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
+	 * hook runs.
+	 * Le dice a wordpress que ejecute vbt_setup() cuando el hook
+	 * 'after_setup_theme' este corriendo.
 	 */
 	function vbt_setup()
 	{
 	
 		// Make theme available for translation
 		// Translations can be filed in the /languages/ directory
+		// Haz el tema traducible
+		// Las traducciones se encuentran en el directorio /languages/
 		load_theme_textdomain('vbt', TEMPLATEPATH . '/languages');
 
 		// Add default posts and comments RSS feed links to head.
+		// Agrega links de RSS fed de posts y comentarios al head
 		add_theme_support('automatic-feed-links');
 
 		// Let WordPress manage the document title.
+		// Permitele a wordpres colocar el titulo
 		add_theme_support('title-tag');
 
 		// Switch default core markup for search form, comment form, and comments
 		// to output valid HTML5.
+		// Cambia las etiquetas default para el formulario de busqueda y los
+		// comentarios para que sea HTML5.
 		add_theme_support('html5', array(
 			'search-form',
 			'comment-form',
@@ -32,6 +42,7 @@ if (! function_exists('vbt_setup')):
 			));
 
 		// Enable support for Post Formats.
+		// Activa el soporte para tipos de posts
 		// See http://codex.wordpress.org/Post_Formats
 		add_theme_support('post-formats', array(
 			'aside',
@@ -42,9 +53,11 @@ if (! function_exists('vbt_setup')):
 			));
 
 		// Enable support for Post Thumbnails on posts and pages.
+		// Activa el soporte para Thumbanails en los posts y páginas.
 		add_theme_support('post-thumbnails');
 
-		// Enable suppor for custom Logo
+		// Enable support for custom Logo
+		// Activa el soporte para custom logo
 		add_theme_support('custom-logo', array(
 			'height' => 50,
 			'width' => 300,
@@ -54,6 +67,7 @@ if (! function_exists('vbt_setup')):
 			));
 	
 		// Register Menus
+		// Registra menus
 		register_nav_menus(
 			array(
 				'primary' => __('Primary Nav')
@@ -65,6 +79,7 @@ add_action( 'after_setup_theme', 'vbt_setup' );
 if (!function_exists('vbt_widgets_init')):
 	/**
 	 * Register Widget Area
+	 * Registra las areas de Widgets
 	 */
 	function vbt_widgets_init()
 	{
@@ -83,7 +98,8 @@ endif;
 
 if (!function_exists('vbt_remove_headlinks')):
 	/**
-	 * Removes some links from the header 
+	 * Removes some links from the header
+	 * Remueve algunos links del header
 	 */
 	function vbt_remove_headlinks() {
 		remove_action('wp_head', 'rsd_link');
@@ -98,16 +114,19 @@ add_action('init', 'vbt_remove_headlinks');
 
 /**
  * Removing the WP version
+ * Quita la version de wordpress
  */
 add_filter('the_generator', '__return_false');
 
 /**
  * Remove admin bar
+ * Quita la barra de admin
  */
 add_filter('show_admin_bar', '__return_false');
 
 /**
- * Make menus compatibles with Bootstrap
+ * Make menus compatibles with .navbar from Bootstrap
+ * Hace los menus compatibles con .navbar de bootstrap
  */
 if (!function_exists('vbt_change_menu_class')):
 	function vbt_change_menu_class($menu)
