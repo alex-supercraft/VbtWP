@@ -142,4 +142,5 @@ endif;
 add_filter('wp_nav_menu','vbt_change_menu_class');
 
 require_once('inc/scripts.php');
+require_once('inc/searchform.php');
 ?>
