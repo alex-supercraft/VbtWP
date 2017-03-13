@@ -29,7 +29,7 @@
 									<?php endif; ?>
 								</div>
 								<div class="post-info">
-									<ul class="list-unstyled">
+									<ul class="list-unstyled list-inline">
 										<li>
 											<span class="glyphicon glyphicon-time"></span> <?php echo get_the_date(); ?>
 										</li>
