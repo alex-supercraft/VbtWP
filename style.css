@@ -18,6 +18,10 @@ Tags: Wordpress theme, CSS3, Twitter Bootstrap, HTML5, jQuery
 body {
   padding-top: 50px;
 }
+body h1.text-hide {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 /* ----------------------------------------- */
 /* Header Style */
 /* ----------------------------------------- */
