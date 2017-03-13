@@ -32,7 +32,7 @@
 					</li>
 					<li>
 						<span class="glyphicon glyphicon-folder-open"></span>
-						<b><?php echo __( 'Publicado en' , 'gb' ) . ': ';?></b>
+						<b><?php echo __( 'Publicado en' , 'vbt' ) . ': ';?></b>
 						<?php the_category(', '); ?>
 					</li>
 					<li>
@@ -64,7 +64,7 @@
 
 			<?php endif; ?>
 
-			<?php edit_post_link( __( 'Editar', 'gb' ), '<p class="edit">', '</p>' ); ?>
+			<?php edit_post_link( __( 'Editar', 'vbt' ), '<p class="edit">', '</p>' ); ?>
 		</footer>
 	</article>
 <?php endwhile; // end post loop?>
