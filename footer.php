@@ -7,15 +7,14 @@
  */
 ?>
 	<!-- #vbt-footer -->
-	<footer id="vbt-footer">
-		<div class="footer-info">
+	<footer id="vbt-footer" class="site-footer site-footer-dark">
+		<div class="site-footer-info">
 			<div class="container">
 				<p class="text-center">
 					<?php echo __('Plantilla diseñada por'); ?> <a href="https://twitter.com/rincorpes"><?php echo __('Rincorpes'); ?></a> <?php echo __('con tecnología'); ?> <a href="http://wordpress.org"><?php echo __('Wordpress.org'); ?></a><br />
 					© <a href="http://www.github.com/rincorpes/vbt-wp-theme">Vbt Wp Theme</a> 2017
 				</p>
 			</div>
-		</div>
 		</div>
 	</footer>
 	<!-- end #vbt-footer -->

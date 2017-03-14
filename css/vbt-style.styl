@@ -1,0 +1,299 @@
+// Vars
+
+// Mixins
+-clean()
+	if length(arguments) > 0
+		background-color transparent if bg in arguments
+		border 0 if border in arguments
+		margin-top 0 if margin-top in arguments
+		margin-right 0 if margin-right in arguments
+		margin-bottom 0 if margin-bottom in arguments
+		margin-left 0 if margin-left in arguments
+		margin 0 if margin in arguments
+		padding-top 0 if padding-top in arguments
+		padding-right 0 if padding-right in arguments
+		padding-bottom 0 if padding-bottom in arguments
+		padding-left 0 if padding-left in arguments
+		padding 0 if padding in arguments
+
+-padding()
+
+	if length(arguments) == 1
+		padding unit(arguments[0], 'px')
+		
+	else if length(arguments) == 2
+		if arguments[0] is a 'unit' 
+			padding unit(arguments[0], 'px') unit(arguments[1], 'px')
+		else if arguments[1] is a 'unit' 
+			padding-top unit(arguments[1], 'px') if arguments[0] == top || arguments[0] == vertical
+			padding-right unit(arguments[1], 'px') if arguments[0] == right || arguments[0] == horizontal
+			padding-bottom unit(arguments[1], 'px') if arguments[0] == bottom || arguments[0] == vertical
+			padding-left unit(arguments[1], 'px') if arguments[0] == left || arguments[0] == horizontal
+			
+	else if length(arguments) == 3
+		if arguments[0] is a 'unit'
+			padding unit(arguments[0], 'px') unit(arguments[1], 'px') unit(arguments[2], 'px')
+		else if arguments[0] is a 'ident' && arguments[1] is a 'unit'
+			padding-top unit(arguments[1], 'px') if arguments[0] == vertical
+			padding-bottom unit(arguments[2], 'px') if arguments[0] == vertical
+			padding-left unit(arguments[1], 'px') if arguments[0] == horizontal
+			padding-right unit(arguments[2], 'px') if arguments[0] == horizontal
+		else if arguments[0] is a 'ident' && arguments[1] is a 'ident'
+			padding-top unit(arguments[2], 'px') if arguments[0] == top || arguments[0] == vertical || arguments[1] == top || arguments[1] == vertical
+			padding-right unit(arguments[2], 'px') if arguments[0] == right || arguments[0] == horizontal || arguments[1] == right || arguments[1] == horizontal
+			padding-bottom unit(arguments[2], 'px') if arguments[0] == bottom || arguments[0] == vertical || arguments[1] == bottom || arguments[1] == vertical
+			padding-left unit(arguments[2], 'px') if arguments[0] == left || arguments[0] == horizontal || arguments[1] == left || arguments[1] == horizontal
+	
+	else if length(arguments) == 4
+		if arguments[0] is a 'unit'
+			padding unit(arguments[0], 'px') unit(arguments[1], 'px') unit(arguments[2], 'px') unit(arguments[3], 'px')
+		else if arguments[0] is a 'ident' && arguments[1] is a 'ident'
+			padding-top unit(arguments[2], 'px') if arguments[0] == top || arguments[0] == vertical
+			padding-top unit(arguments[3], 'px') if arguments[1] == top || arguments[1] == vertical
+			padding-right unit(arguments[2], 'px') if arguments[0] == right || arguments[0] == horizontal
+			padding-right unit(arguments[3], 'px') if arguments[1] == right || arguments[1] == horizontal
+			padding-bottom unit(arguments[2], 'px') if arguments[0] == bottom || arguments[0] == vertical
+			padding-bottom unit(arguments[3], 'px') if arguments[1] == bottom || arguments[1] == vertical
+			padding-left unit(arguments[2], 'px') if arguments[0] == left || arguments[0] == horizontal
+			padding-left unit(arguments[3], 'px') if arguments[1] == left || arguments[1] == horizontal
+
+-margin()
+	if length(arguments) == 1
+		
+		if arguments[0] is a 'unit'
+			$value-0 = unit(arguments[0], 'px')
+		else
+			$value-0 = arguments[0]
+			
+		margin $value-0
+		
+	else if length(arguments) == 2
+		
+		if arguments[0] is a 'unit'
+			$value-0 = unit(arguments[0], 'px')
+		else
+			$value-0 = arguments[0]
+		if arguments[1] is a 'unit'
+			$value-1 = unit(arguments[1], 'px')
+		else
+			$value-1 = arguments[1]
+		
+		if arguments[0] is a 'unit' 
+			margin $value-0 $value-1
+			
+		else if arguments[1] is a 'unit' || arguments[1] == auto
+			margin-top $value-1 if arguments[0] == top || arguments[0] == vertical
+			margin-right $value-1 if arguments[0] == right || arguments[0] == horizontal
+			margin-bottom $value-1 if arguments[0] == bottom || arguments[0] == vertical
+			margin-left $value-1 if arguments[0] == left || arguments[0] == horizontal
+			
+	else if length(arguments) == 3
+		
+		if arguments[0] is a 'unit'
+			$value-0 = unit(arguments[0], 'px')
+		else
+			$value-0 = arguments[0]
+		if arguments[1] is a 'unit'
+			$value-1 = unit(arguments[1], 'px')
+		else
+			$value-1 = arguments[1]
+		if arguments[2] is a 'unit'
+			$value-2 = unit(arguments[2], 'px')
+		else
+			$value-2 = arguments[2]
+		
+		if arguments[0] is a 'unit'
+			margin $value-0 $value-1 $value-2
+			
+		else if arguments[0] is a 'ident' && arguments[1] is a 'unit'
+			margin-top $value-1 if arguments[0] == vertical
+			margin-bottom $value-2 if arguments[0] == vertical
+			margin-left $value-1 if arguments[0] == horizontal
+			margin-right $value-2 if arguments[0] == horizontal
+			
+		else if arguments[0] is a 'ident' && arguments[1] is a 'ident'
+			margin-top $value-2 if arguments[0] == top || arguments[0] == vertical || arguments[1] == top || arguments[1] == vertical
+			margin-right $value-2 if arguments[0] == right || arguments[0] == horizontal || arguments[1] == right || arguments[1] == horizontal
+			margin-bottom $value-2 if arguments[0] == bottom || arguments[0] == vertical || arguments[1] == bottom || arguments[1] == vertical
+			margin-left $value-2 if arguments[0] == left || arguments[0] == horizontal || arguments[1] == left || arguments[1] == horizontal
+	
+	else if length(arguments) == 4
+		
+		if arguments[0] is a 'unit'
+			$value-0 = unit(arguments[0], 'px')
+		else
+			$value-0 = arguments[0]
+		if arguments[1] is a 'unit'
+			$value-1 = unit(arguments[1], 'px')
+		else
+			$value-1 = arguments[1]
+		if arguments[2] is a 'unit'
+			$value-2 = unit(arguments[2], 'px')
+		else
+			$value-2 = arguments[2]
+		if arguments[3] is a 'unit'
+			$value-3 = unit(arguments[3], 'px')
+		else
+			$value-3 = arguments[3]
+			
+		if arguments[0] is a 'unit'
+			margin  $value-0 $value-1 $value-2 $value-3
+		else if arguments[0] is a 'ident' && arguments[1] is a 'ident'
+			margin-top $value-2 if arguments[0] == top || arguments[0] == vertical
+			margin-top $value-3 if arguments[1] == top || arguments[1] == vertical
+			margin-right $value-2 if arguments[0] == right || arguments[0] == horizontal
+			margin-right $value-3 if arguments[1] == right || arguments[1] == horizontal
+			margin-bottom $value-2 if arguments[0] == bottom || arguments[0] == vertical
+			margin-bottom $value-3 if arguments[1] == bottom || arguments[1] == vertical
+			margin-left $value-2 if arguments[0] == left || arguments[0] == horizontal
+			margin-left $value-3 if arguments[1] == left || arguments[1] == horizontal
+
+-center()
+	if length(arguments) == 2
+		if arguments[0] is a 'ident' && arguments[1] is a 'unit'
+			margin-top unit(arguments[1], 'px') if top in arguments[0] || vertical in arguments[0]
+			margin-bottom unit(arguments[1], 'px') if bottom in arguments[0] || vertical in arguments[0]
+			width arguments[1] if width in arguments[0]
+
+	margin-left auto
+	margin-right auto
+	
+-border()
+	// Options
+	$width = 1px
+	$style = solid
+	$color = #e7e7e7
+	
+	// If not arguments paint all borders
+	if length(arguments) == 0
+		border $width $style $color
+		
+	else if length(arguments) == 1
+		if arguments[0] is a 'unit'
+			$width = unit(arguments[0], 'px')
+			border $width $style $color
+			
+		else if arguments[0] is a 'ident'
+			border-top $width $style $color if top in arguments[0] || vertical in arguments[0]
+			border-right $width $style $color if right in arguments[0] || horizontal in arguments[0]
+			border-bottom $width $style $color if bottom in arguments[0] || vertical in arguments[0]
+			border-left $width $style $color if left in arguments[0] || horizontal in arguments[0]
+			boredr none if none in arguments[0]
+	
+	else if length(arguments) == 2
+		if arguments[0] is a 'unit' && arguments[1] is a 'ident'
+			$width = unit(arguments[0], 'px')
+			$style = arguments[1]
+			border $width $style $color
+		
+		else if arguments[0] is a 'ident'
+			border-width unit(arguments[1], 'px') if width in arguments[0]
+			border-style arguments[1] if style in arguments[0]
+			border-color arguments[1] if color in arguments[0]
+			
+		else if arguments[0] is a 'ident' && arguments[1] is a 'unit'
+			$width = unit(arguments[1], 'px')
+			border-top $width $style $color if top in arguments[0] || vertical in arguments[0]
+			border-right $width $style $color if right in arguments[0] || horizontal in arguments[0]
+			border-bottom $width $style $color if bottom in arguments[0] || vertical in arguments[0]
+			border-left $width $style $color if left in arguments[0] || horizontal in arguments[0]
+			
+	else if length(arguments) == 3
+		if arguments[0] is a 'unit' && arguments[1] is a 'ident' arguments[1] is a 'rgba' //revisar
+			$width = unit(arguments[0], 'px')
+			$style = arguments[1]
+			$color = arguments[2]
+			border $width $style $color
+			
+		else if arguments[0] is a 'ident' && arguments[1] is a 'unit' arguments[1] is a 'ident' //revisar
+			$width = unit(arguments[1], 'px')
+			$style = arguments[2]
+			border-top $width $style $color if top in arguments[0] || vertical in arguments[0]
+			border-right $width $style $color if right in arguments[0] || horizontal in arguments[0]
+			border-bottom $width $style $color if bottom in arguments[0] || vertical in arguments[0]
+			border-left $width $style $color if left in arguments[0] || horizontal in arguments[0]
+			
+	else if length(arguments) == 4
+		if arguments[0] is a 'ident' && arguments[1] is a 'unit' arguments[2] is a 'ident' &&  arguments[3] is a 'rgba'
+			$width = unit(arguments[1], 'px')
+			$style = arguments[2]
+			$color = arguments[3]
+			border-top $width $style $color if top in arguments[0] || vertical in arguments[0]
+			border-right $width $style $color if right in arguments[0] || horizontal in arguments[0]
+			border-bottom $width $style $color if bottom in arguments[0] || vertical in arguments[0]
+			border-left $width $style $color if left in arguments[0] || horizontal in arguments[0]
+			
+-border-radius($radius = 5px, $args...)
+	if length($args) == 3
+		border-top-right-radius $radius
+		border-bottom-right-radius $args[0]
+		border-bottom-left-radius $args[1]
+		border-top-left-radius $args[2]
+	else if length($args) == 2
+		border-top-right-radius $radius
+		border-bottom-right-radius $args[0]
+		border-bottom-left-radius $args[1]
+	else if length($args) == 1
+		border-top-right-radius $radius
+		border-bottom-right-radius $args[0]
+	else
+		border-radius $radius
+			
+-box-shadow($h = 2px, $v = 2px, $blur = 2px, $color = #101010, $opacity = 0.3, $inset = false)
+	if (!$inset)
+		box-shadow $h $v $blur rgba($color, $opacity)
+		-webkit-box-shadow $h $v $blur rgba($color, $opacity)
+		-moz-box-shadow $h $v $blur rgba($color, $opacity)
+	else
+		box-shadow inset $h $v $blur rgba($color, $opacity)
+		-webkit-box-shadow inset $h $v $blur rgba($color, $opacity)
+		-moz-box-shadow inset $h $v $blur rgba($color, $opacity)
+
+/** -----------------------------------------
+  * General Style
+  * -----------------------------------------
+  */
+a
+	color #ee2500
+	&:hover
+		color #d32000
+
+.input-group
+	input:focus 
+	text-area:focus 
+		-border color #ee2500
+		-box-shadow 1px 1px 2px #ee2500
+	
+*:hover
+*:focus
+	transition all .5s
+	
+/** -----------------------------------------
+  * Site header Style
+  * -----------------------------------------
+  */
+header.site-header
+	-margin bottom 20px
+	&-default
+		background-color #f8f8f8
+		-border bottom
+		.navbar
+			-clean bg border margin
+			a:hover
+				background-color #ddd
+			&-site-identity
+				h1
+					-margin vertical horizontal 5 0
+					a:hover
+						background-color transparent
+/** -----------------------------------------
+  * Site Main Style
+  * -----------------------------------------
+  */
+div[role=main]
+	-padding vertical 20px
+	min-height 500px
+/** -----------------------------------------
+  * Site Footer Style
+  * -----------------------------------------
+  */

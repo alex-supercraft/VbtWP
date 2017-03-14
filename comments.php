@@ -7,7 +7,7 @@
  */
 ?>
 
-<section id="vbt-comments" class="panel panel-default">
+<section id="vbt-comments" class="panel panel-default panel-comments">
 	<?php /* Important, do not delete | Importante, No borrar */ ?>
 	<?php if ( post_password_required() ) : ?>
 		<div class="alert alert-warning">

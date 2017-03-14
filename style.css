@@ -4,96 +4,40 @@ Theme URI: http://www.github.com/rincorpes/vbt-wp-theme
 Author: Santiago Rincón
 Author URI: http://www.twitter.com/rincorpes
 Description: Theme for devellopers. || Tema para desarrolladores.
-Version: 1.0.0
+Version: 1.1.0
 License: GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 License URI: https://github.com/Rincorpes/vbt-wp-theme/blob/master/LICENSE
 Text Domain: vbt
 Tags: Wordpress theme, CSS3, Twitter Bootstrap, HTML5, jQuery
 */
-/* Default Theme */
-/* ----------------------------------------- */
-/* ----------------------------------------- */
-/* General Style */
-/* ----------------------------------------- */
-body {
-  padding-top: 50px;
-}
-body h1.text-hide {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-/* ----------------------------------------- */
-/* Header Style */
-/* ----------------------------------------- */
-/* ----------------------------------------- */
-/* Main Style */
-/* ----------------------------------------- */
-#vbt-main {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-#vbt-main #vbt-content article {
-  border: 1px solid #e7e7e7;
-}
-#vbt-main #vbt-content article .post-header {
-  margin-top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-#vbt-main #vbt-content article .post-header .post-thumbnail {
-  padding-left: 20px;
-  padding-right: 20px;
-  overflow: hidden;
-  background: #f8f8f8;
-}
-#vbt-main #vbt-content article .post-header .post-thumbnail .image-not-found img {
-  width: 100%;
-  max-width: 700px;
-  height: auto;
-}
-#vbt-main #vbt-content article .post-header .post-info ul li {
-  padding: 20px 30px;
-}
-#vbt-main #vbt-content article .post-header .post-info ul li span {
-  margin-right: 5px;
-}
-#vbt-main #vbt-content article .post-header .post-title {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #e7e7e7;
-}
-#vbt-main #vbt-content article .post-header .post-title h2 {
-  text-transform: uppercase;
-}
-#vbt-main #vbt-content article .the-content {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-#vbt-main #vbt-content article .post-footer {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-top: 1px solid #e7e7e7;
-}
-#vbt-main #vbt-content #vbt-comments {
-  margin-top: 20px;
-}
-#vbt-main #vbt-content #vbt-comments .comment-form-wrapp {
-  padding: 20px;
-  border-top: 1px solid #e7e7e7;
-}
-/* ----------------------------------------- */
-/* Footer Style */
-/* ----------------------------------------- */
-#vbt-footer {
-  background: #f8f8f8;
-  border-top: 1px solid #e7e7e7;
-  padding-top: 20px;
-}
+
+/** Default Theme
+  * ----------------------------------------- */
+
+/** -----------------------------------------
+  * General Style
+  * -----------------------------------------
+  */
+body {}
+/** -----------------------------------------
+  * Header Style
+  * -----------------------------------------
+  */
+#vbt-header {}
+/** -----------------------------------------
+  * Main Style
+  * -----------------------------------------
+  */
+#vbt-main {}
+  #vbt-content {}
+    article.type-post {}
+    article.type-page {}
+    #vbt-error-404 {}
+    #vbt-author-info{}
+    #vbt-comments {}
+    #vbt-sidebar
+/** -----------------------------------------
+  * Footer Style
+  * -----------------------------------------
+  */
+#vbt-footer {}

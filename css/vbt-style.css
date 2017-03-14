@@ -1,0 +1,62 @@
+/** -----------------------------------------
+  * General Style
+  * -----------------------------------------
+  */
+a {
+  color: #ee2500;
+}
+a:hover {
+  color: #d32000;
+}
+.input-group input:focus,
+.input-group text-area:focus {
+  border-color: #ee2500;
+  box-shadow: 1px 1px 2px rgba(238,37,0,0.3);
+  -webkit-box-shadow: 1px 1px 2px rgba(238,37,0,0.3);
+  -moz-box-shadow: 1px 1px 2px rgba(238,37,0,0.3);
+}
+*:hover,
+*:focus {
+  transition: all 0.5s;
+}
+/** -----------------------------------------
+  * Site header Style
+  * -----------------------------------------
+  */
+header.site-header {
+  margin-bottom: 20px;
+}
+header.site-header-default {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e7e7e7;
+}
+header.site-header-default .navbar {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+}
+header.site-header-default .navbar a:hover {
+  background-color: #ddd;
+}
+header.site-header-default .navbar-site-identity h1 {
+  margin-top: 5px;
+  margin-right: 0px;
+  margin-bottom: 5px;
+  margin-left: 0px;
+}
+header.site-header-default .navbar-site-identity h1 a:hover {
+  background-color: transparent;
+}
+/** -----------------------------------------
+  * Site Main Style
+  * -----------------------------------------
+  */
+div[role=main] {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  min-height: 500px;
+}
+/** -----------------------------------------
+  * Site Footer Style
+  * -----------------------------------------
+  */
