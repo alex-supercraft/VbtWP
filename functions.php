@@ -1,10 +1,25 @@
 <?php
 /**
- * Vbt Functions
- * Funciones y utilidades
+ * Functions and utilities
+ * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package vbt
  */
+
+/**
+ * Gets function file located in the functions directory
+ *
+ * @param string $file_name Name of the function file
+ * @return string
+ */
+function vbt_get_function_path($file_name)
+{
+	return get_template_directory() . '/functions/' . $file_name . '.php';
+}
+
+// Theme support options
+require_once(vbt_get_function_path('theme-support'));
+
 if (! function_exists('vbt_setup')):
 	/** 
 	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
@@ -20,51 +35,6 @@ if (! function_exists('vbt_setup')):
 		// Haz el tema traducible
 		// Las traducciones se encuentran en el directorio /languages/
 		load_theme_textdomain('vbt', TEMPLATEPATH . '/languages');
-
-		// Add default posts and comments RSS feed links to head.
-		// Agrega links de RSS fed de posts y comentarios al head
-		add_theme_support('automatic-feed-links');
-
-		// Let WordPress manage the document title.
-		// Permitele a wordpres colocar el titulo
-		add_theme_support('title-tag');
-
-		// Switch default core markup for search form, comment form, and comments
-		// to output valid HTML5.
-		// Cambia las etiquetas default para el formulario de busqueda y los
-		// comentarios para que sea HTML5.
-		add_theme_support('html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			));
-
-		// Enable support for Post Formats.
-		// Activa el soporte para tipos de posts
-		// See http://codex.wordpress.org/Post_Formats
-		add_theme_support('post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-			));
-
-		// Enable support for Post Thumbnails on posts and pages.
-		// Activa el soporte para Thumbanails en los posts y páginas.
-		add_theme_support('post-thumbnails');
-
-		// Enable support for custom Logo
-		// Activa el soporte para custom logo
-		add_theme_support('custom-logo', array(
-			'height' => 50,
-			'width' => 300,
-			'flex-height' => true,
-			'flex-width' => true,
-			'header-text' => array('site-title', 'site-description')
-			));
 	
 		// Register Menus
 		// Registra menus
