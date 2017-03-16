@@ -20,6 +20,9 @@ function vbt_get_function_path($file_name)
 // Theme support options
 require_once(vbt_get_function_path('theme-support'));
 
+// WordPress Head and other clean options
+require_once(vbt_get_function_path('cleanup'));
+
 if (! function_exists('vbt_setup')):
 	/** 
 	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
@@ -65,34 +68,6 @@ if (!function_exists('vbt_widgets_init')):
 
 	}
 endif;
-
-if (!function_exists('vbt_remove_headlinks')):
-	/**
-	 * Removes some links from the header
-	 * Remueve algunos links del header
-	 */
-	function vbt_remove_headlinks() {
-		remove_action('wp_head', 'rsd_link');
-		remove_action('wp_head', 'wlwmanifest_link');
-		remove_action('wp_head', 'index_rel_link');
-		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-		remove_action('wp_head', 'start_post_rel_link', 10, 0);
-		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-	}
-endif;
-add_action('init', 'vbt_remove_headlinks');
-
-/**
- * Removing the WP version
- * Quita la version de wordpress
- */
-add_filter('the_generator', '__return_false');
-
-/**
- * Remove admin bar
- * Quita la barra de admin
- */
-add_filter('show_admin_bar', '__return_false');
 
 /**
  * Get some information for loop.php
