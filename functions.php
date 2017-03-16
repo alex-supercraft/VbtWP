@@ -23,6 +23,9 @@ require_once(vbt_get_function_path('theme-support'));
 // WordPress Head and other clean options
 require_once(vbt_get_function_path('cleanup'));
 
+// Register scripts and stylesheets
+require_once(vbt_get_function_path('enqueue-scripts'));
+
 if (! function_exists('vbt_setup')):
 	/** 
 	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
@@ -107,7 +110,6 @@ if (!function_exists('vbt_change_menu_class')):
 endif;
 add_filter('wp_nav_menu','vbt_change_menu_class');
 
-require_once('inc/scripts.php');
 require_once('inc/searchform.php');
 require_once('inc/comments.php');
 ?>
