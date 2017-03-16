@@ -26,6 +26,9 @@ require_once(vbt_get_function_path('cleanup'));
 // Register scripts and stylesheets
 require_once(vbt_get_function_path('enqueue-scripts'));
 
+// Register custom menus
+require_once(vbt_get_function_path('menu'));
+
 if (! function_exists('vbt_setup')):
 	/** 
 	 * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
@@ -41,13 +44,6 @@ if (! function_exists('vbt_setup')):
 		// Haz el tema traducible
 		// Las traducciones se encuentran en el directorio /languages/
 		load_theme_textdomain('vbt', TEMPLATEPATH . '/languages');
-	
-		// Register Menus
-		// Registra menus
-		register_nav_menus(
-			array(
-				'primary' => __('Primary Nav')
-				));
 	}
 endif;
 add_action( 'after_setup_theme', 'vbt_setup' );
@@ -92,23 +88,6 @@ if (!function_exists('vbt_get_loop_title')) :
 		return $title;
 	}
 endif;
-
-/**
- * Make menus compatibles with .navbar from Bootstrap
- * Hace los menus compatibles con .navbar de bootstrap
- */
-if (!function_exists('vbt_change_menu_class')):
-	function vbt_change_menu_class($menu)
-	{  
-		$menu = preg_replace('/class="menu"/','class="menu nav navbar-nav"', $menu);
-		$menu = preg_replace('/class="sub-menu"/','class="sub-menu dropdown-menu"', $menu);
-		$menu = preg_replace('/(menu-item-has-children)/','$1 dropdown', $menu);
-		$menu = preg_replace('/<a(.*)href="#">(.*)<\/a>/','<a$1href="#" class="dropdown-toggle" data-toggle="dropdown">$2 <b class="caret"></b></a>', $menu);
-
-	    return $menu;  
-	}
-endif;
-add_filter('wp_nav_menu','vbt_change_menu_class');
 
 require_once('inc/searchform.php');
 require_once('inc/comments.php');
