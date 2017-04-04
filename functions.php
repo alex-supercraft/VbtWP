@@ -5,7 +5,7 @@
  *
  * @package vbt
  */
-
+// $P$BZZxe5jcbhYIdP8Y32DChwzkVmj/5Y0
 /**
  * Gets function file located in the functions directory
  *
