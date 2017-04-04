@@ -87,8 +87,4 @@ function vbt_excerpt_more($more)
 {
 	return '<a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Más', 'vbt') . get_the_title($post->ID).'">'. __('... Saber más &raquo;', 'vbt') .'</a>';
 } /* end excerpt more */
-
-/**
- * 
- */
 ?>

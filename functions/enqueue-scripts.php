@@ -30,6 +30,6 @@ function vbt_site_scripts()
 	wp_enqueue_style( 'vbt-style', get_template_directory_uri() . '/css/vbt-style.css', array(), '1.0.0','all' );
 	// Base Style
 	wp_enqueue_style( 'base-style', get_template_directory_uri() . '/style.css', array(), '1.0.0','all' );
-}
+} /* end site scripts */
 add_action('wp_enqueue_scripts', 'vbt_site_scripts', 999);
 ?>
