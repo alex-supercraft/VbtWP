@@ -10,34 +10,3 @@ License URI: https://github.com/Rincorpes/vbt-wp-theme/blob/master/LICENSE
 Text Domain: vbt
 Tags: Wordpress theme, CSS3, Twitter Bootstrap, HTML5, jQuery
 */
-
-/** Default Theme
-  * ----------------------------------------- */
-
-/** -----------------------------------------
-  * General Style
-  * -----------------------------------------
-  */
-body {}
-/** -----------------------------------------
-  * Header Style
-  * -----------------------------------------
-  */
-#vbt-header {}
-/** -----------------------------------------
-  * Main Style
-  * -----------------------------------------
-  */
-#vbt-main {}
-  #vbt-content {}
-    article.type-post {}
-    article.type-page {}
-    #vbt-error-404 {}
-    #vbt-author-info{}
-    #vbt-comments {}
-    #vbt-sidebar
-/** -----------------------------------------
-  * Footer Style
-  * -----------------------------------------
-  */
-#vbt-footer {}
