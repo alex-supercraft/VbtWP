@@ -13,10 +13,13 @@
  * @param string $file_name Name of the function file
  * @return string
  */
-function asc_get_function_path( $file_name )
+if ( ! function_exists( 'asc_get_function_path' ))
 {
-	return get_template_directory() . '/functions/' . $file_name . '.php';
-} /* end asc_get_function_path */
+	function asc_get_function_path( $file_name )
+	{
+		return get_template_directory() . '/functions/' . $file_name . '.php';
+	} /* end asc_get_function_path */
+}
 
 // Theme support options
 // require_once(vbt_get_function_path('theme-support'));
