@@ -34,21 +34,19 @@ require_once( asc_get_function_path( 'enqueue-scripts' ) );
 require_once(asc_get_function_path( 'menu' ) );
 
 /** 
- * Tells WordPress to run vbt_setup() when the 'after_setup_theme' 
+ * Tells WordPress to run asc_setup() when the 'after_setup_theme' 
  * hook runs.
- * Le dice a wordpress que ejecute vbt_setup() cuando el hook
- * 'after_setup_theme' este corriendo.
+ * 
+ * @since 1.0.0
+ * @package functions_setup
  */
-// function vbt_setup()
-// {
-
-// 	// Make theme available for translation
-// 	// Translations can be filed in the /languages/ directory
-// 	// Haz el tema traducible
-// 	// Las traducciones se encuentran en el directorio /languages/
-// 	load_theme_textdomain('vbt', TEMPLATEPATH . '/languages');
-// } /* end vbt_setup */
-// add_action( 'after_setup_theme', 'vbt_setup' );
+function asc_setup()
+{
+	// Make theme available for translation
+	// Translations can be filed in the /languages/ directory
+	load_theme_textdomain( 'asc', TEMPLATEPATH . '/languages' );
+} /* end asc_setup */
+add_action( 'after_setup_theme', 'asc_setup' );
 
 /**
  * Register Widget Area
