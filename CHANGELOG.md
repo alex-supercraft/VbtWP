@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### [2.0.12] - 2021-03-02
+
+#### Added
+
+- Menu functions added in `functions/menu.php`.
+
 ### [2.0.11] - 2021-03-02
 
 #### Added
