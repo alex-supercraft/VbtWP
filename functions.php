@@ -28,7 +28,7 @@ require_once( asc_get_function_path( 'theme-support' ) );
 require_once( asc_get_function_path( 'cleanup' ) );
 
 // Register scripts and stylesheets
-// require_once(vbt_get_function_path('enqueue-scripts'));
+require_once( asc_get_function_path('enqueue-scripts' ) );
 
 // Register custom menus
 // require_once(vbt_get_function_path('menu'));

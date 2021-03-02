@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### [2.0.11] - 2021-03-02
+
+#### Added
+
+- Enqueue scripts functions added in `functions/enqueue-scripts.php`.
+
 ### [2.0.10] - 2021-03-02
 
 #### Added
