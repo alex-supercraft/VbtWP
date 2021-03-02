@@ -13,7 +13,7 @@
  * @param string $file_name Name of the function file
  * @return string
  */
-if ( ! function_exists( 'asc_get_function_path' ))
+if ( ! function_exists( 'asc_get_function_path' ) )
 {
 	function asc_get_function_path( $file_name )
 	{
@@ -22,10 +22,10 @@ if ( ! function_exists( 'asc_get_function_path' ))
 }
 
 // Theme support options
-require_once(asc_get_function_path('theme-support'));
+require_once( asc_get_function_path( 'theme-support' ) );
 
 // WordPress Head and other clean options
-// require_once(vbt_get_function_path('cleanup'));
+require_once( asc_get_function_path( 'cleanup' ) );
 
 // Register scripts and stylesheets
 // require_once(vbt_get_function_path('enqueue-scripts'));

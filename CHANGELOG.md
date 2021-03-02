@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### [2.0.10] - 2021-03-02
+
+#### Added
+
+- Clean up functions added in `functions/cleanup.php`.
+
 ### [2.0.9] - 2021-03-02
 
 #### Added
