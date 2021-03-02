@@ -1,5 +1,27 @@
-# VbtWP
+# asc-wp-blank-theme
 
-Another Wordpress blank theme for devellopers. A good option to take as a basis to devellop Wordpress Themes
+Just another Wordpress blank theme for devellopers. A good option to take as a basis to devellop Wordpress Themes
 
-Develloped with HTML5, this theme uses Twitter Bootstrap 3
+## Table of contents
+
+## About the project
+
+### Built with
+
+## Getting started
+
+### Download
+
+### Instalation
+
+## Usage
+
+## Road Map
+
+## Contributing
+
+## Licence
+
+## Contact
+
+## Ackknowledgements
