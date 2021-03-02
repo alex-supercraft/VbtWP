@@ -22,7 +22,7 @@ if ( ! function_exists( 'asc_get_function_path' ))
 }
 
 // Theme support options
-// require_once(vbt_get_function_path('theme-support'));
+require_once(asc_get_function_path('theme-support'));
 
 // WordPress Head and other clean options
 // require_once(vbt_get_function_path('cleanup'));

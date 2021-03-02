@@ -10,6 +10,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 #### Added
 
+- `asc_theme_support` function added in `functions/theme-support.php`.
+
+### [2.0.8] - 2021-03-02
+
+#### Added
+
 - `asc_get_function_path` function added.
 
 ### [2.0.7] - 2021-03-02
