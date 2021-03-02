@@ -1,18 +1,21 @@
 <?php
 /**
  * Adding all theme support
+ * 
+ * @since 1.0.0
+ * @package functions_theme_support
  */
-function vbt_theme_support()
+function asc_theme_support()
 {
 	// RSS support.
-	add_theme_support('automatic-feed-links');
+	add_theme_support( 'automatic-feed-links' );
 
 	// Let WordPress manage the document title.
-	add_theme_support('title-tag');
+	add_theme_support( 'title-tag' );
 
 	// Switch default core markup for search form, comment form, and comments
 	// to output valid HTML5.
-	add_theme_support('html5',
+	add_theme_support( 'html5',
 		array(
 			'search-form',
 			'comment-form',
@@ -24,7 +27,7 @@ function vbt_theme_support()
 
 	// Enable support for Post Formats.
 	// See http://codex.wordpress.org/Post_Formats
-	add_theme_support('post-formats',
+	add_theme_support( 'post-formats',
 		array(
 			'aside',             // title less blurb
 			'gallery',           // gallery of images
@@ -39,19 +42,19 @@ function vbt_theme_support()
 		);
 
 	// Enable support for Post Thumbnails on posts and pages.
-	add_theme_support('post-thumbnails');
+	add_theme_support( 'post-thumbnails' );
 
 	// Default thumbnail size
-	set_post_thumbnail_size(125, 125, true);
+	set_post_thumbnail_size( 125, 125, true );
 
 	// Enable support for custom Logo
-	add_theme_support('custom-logo',
+	add_theme_support( 'custom-logo',
 		array(
 			'height' => 50,
 			'width' => 300,
 			'flex-height' => true,
 			'flex-width' => true,
-			'header-text' => array('site-title', 'site-description')
+			'header-text' => array( 'site-title', 'site-description' )
 			)
 		);
 
@@ -59,5 +62,5 @@ function vbt_theme_support()
 	$GLOBALS['content_width'] = apply_filters( 'joints_theme_support', 1200 );
 } /* end theme support */
 
-add_action( 'after_setup_theme', 'vbt_theme_support' );
+add_action( 'after_setup_theme', 'asc_theme_support' );
 ?>

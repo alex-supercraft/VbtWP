@@ -10,14 +10,19 @@ register_nav_menus(
 /**
  * Make menus compatibles with .navbar from Bootstrap
  * Hace los menus compatibles con .navbar de bootstrap
+ * 
+ * @since 1.0.0
+ * @package functions_menu
  */
-function vbt_change_menu_class($menu)
+function asc_change_menu_class( $menu )
 {  
-	$menu = preg_replace('/class="menu"/','class="menu nav navbar-nav"', $menu);
-	$menu = preg_replace('/class="sub-menu"/','class="sub-menu dropdown-menu"', $menu);
-	$menu = preg_replace('/(menu-item-has-children)/','$1 dropdown', $menu);
-	$menu = preg_replace('/<a(.*)href="#">(.*)<\/a>/','<a$1href="#" class="dropdown-toggle" data-toggle="dropdown">$2 <b class="caret"></b></a>', $menu);
+	$menu = preg_replace( '/class="menu"/', 'class="menu nav navbar-nav"', $menu );
+	$menu = preg_replace( '/class="sub-menu"/', 'class="sub-menu dropdown-menu"', $menu );
+	$menu = preg_replace( '/(menu-item-has-children)/', '$1 dropdown', $menu );
+	$menu = preg_replace( '/<a(.*)href="#">(.*)<\/a>/', '<a$1href="#" class="dropdown-toggle" data-toggle="dropdown">$2 <b class="caret"></b></a>', $menu );
+
     return $menu;  
 } /* end change menu class */
-add_filter('wp_nav_menu','vbt_change_menu_class');
+
+add_filter( 'wp_nav_menu','asc_change_menu_class' );
 ?>
