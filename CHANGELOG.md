@@ -6,6 +6,12 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 
 ## [Unreleased]
 
+### [2.0.7] - 2021-03-02
+
+### Removed
+
+- All functions in the `functions.php` file.
+
 ### [2.0.6] - 2021-03-02
 
 ### Removed
